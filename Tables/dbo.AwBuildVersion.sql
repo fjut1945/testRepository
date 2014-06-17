@@ -1,7 +1,7 @@
 CREATE TABLE [dbo].[AwBuildVersion]
 (
 [SystemInformationID] [tinyint] NOT NULL IDENTITY(1, 1),
-[Database Version] [nvarchar] (25) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[Database Version] [nvarchar] (26) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [VersionDate] [datetime] NOT NULL,
 [ModifiedDate] [datetime] NOT NULL CONSTRAINT [DF_AWBuildVersion_ModifiedDate] DEFAULT (getdate())
 ) ON [PRIMARY]
@@ -18,9 +18,6 @@ EXEC sp_addextendedproperty N'MS_Description', N'Primary key for AWBuildVersion 
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Date and time the record was last updated.', 'SCHEMA', N'dbo', 'TABLE', N'AwBuildVersion', 'COLUMN', N'VersionDate'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Default constraint value of GETDATE()', 'SCHEMA', N'dbo', 'TABLE', N'AwBuildVersion', 'CONSTRAINT', N'DF_AWBuildVersion_ModifiedDate'
-GO
+
 EXEC sp_addextendedproperty N'MS_Description', N'Primary key (clustered) constraint', 'SCHEMA', N'dbo', 'TABLE', N'AwBuildVersion', 'CONSTRAINT', N'PK_AWBuildVersion_SystemInformationID'
-GO
-EXEC sp_addextendedproperty N'MS_Description', N'Clustered index created by a primary key constraint.', 'SCHEMA', N'dbo', 'TABLE', N'AwBuildVersion', 'INDEX', N'PK_AWBuildVersion_SystemInformationID'
 GO
